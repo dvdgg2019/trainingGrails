@@ -44,7 +44,7 @@ class PersonController {
 
     def Save_Pet(){
         Date date = new Date()
-        def pet = Person.get(params.Id)
+        def pet = Person.get(params.id)
         pet.addToPets(new Pet(name: params.Nombre, birthDate: date.parse("yyyy-MM-dd",params.Fecha_Nacimiento),
                               adoptDate: date.parse("yyyy-MM-dd",  params.Fecha_Adopcion))).save(flush: true)
         index()

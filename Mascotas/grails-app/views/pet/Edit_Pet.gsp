@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <g:form action="Update_Pet">
+    <g:form action="Update_Pet" id="${pet.id}">
     </br></br>
         <g:set var="birth"><g:formatDate format="dd/MM/yyyy" date="${pet.birthDate}"/></g:set>
         <g:set var="adopt"><g:formatDate format="dd/MM/yyyy" date="${pet.adoptDate}"/></g:set>
