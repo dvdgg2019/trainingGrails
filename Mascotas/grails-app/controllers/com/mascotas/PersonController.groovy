@@ -25,27 +25,24 @@ class PersonController {
     }
 
     def Guardar_Person(){
-        def p = new Person(name: params.Nombre, lastName: params.Apellido_Paterno, secondLastName: params.Apellido_Materno, phoneNumber: params.Telefono, address: params.Direccion)
-        p.save()
+        def person = new Person(name: params.Nombre, lastName: params.Apellido_Paterno, secondLastName: params.Apellido_Materno, phoneNumber: params.Telefono, address: params.Direccion)
+        person.save()
         redirect(controller:"person", action:"index")
     }
 
     def Actualizar_Person(){
-        def p = Person.get(params.id)
-        p.name = params.Nombre
-        p.lastName = params.Apellido_Paterno
-        p.secondLastName = params.Apellido_Materno
-        p.phoneNumber = params.Telefono
-        p.address = params.Direccion
-        p.save(flush: true)
+        def person = Person.get(params.id)
+        def bindeingMap = [name: params.Nombre, lastName: params.Apellido_Paterno, secondLastName: params.Apellido_Materno, phoneNumber: params.Telefono, address: params.Direccion]
+        person.properties = bindeingMap
+        person.save(flush: true)
         redirect(controller:"person", action:"index")
     }
 
     def Save_Pet(){
-        Date date = new Date()
         def pet = Person.get(params.id)
-        pet.addToPets(new Pet(name: params.Nombre, birthDate: date.parse("dd/MM/yyyy",params.Fecha_Nacimiento),
-                              adoptDate: date.parse("dd/MM/yyyy",  params.Fecha_Adopcion))).save(flush: true)
+        pet.addToPets(new Pet(name: params.Nombre, birthDate: Date.parse("dd-MM-yyyy",params.Fecha_Nacimiento),
+                              adoptDate: Date.parse("dd-MM-yyyy",  params.Fecha_Adopcion))).save(flush: true)
+
         redirect(controller:"person", action:"index")
     }
 }

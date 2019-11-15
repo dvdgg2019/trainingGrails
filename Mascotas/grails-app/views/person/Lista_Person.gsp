@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
     <meta name="layout" content="main"/>
     <title>Personas Registradas</title>
