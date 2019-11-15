@@ -3,9 +3,9 @@ package com.mascotas
 class Person {
 
     String name
-    String last_name
-    String second_last_name
-    String phone_number
+    String lastName
+    String secondLastName
+    String phoneNumber
     String address
     Date dateCreated
     Date lastUpdated
@@ -24,9 +24,9 @@ class Person {
 
     static constraints = {
         name blank: false, maxSize: 255
-        last_name blank: false, maxSize: 255
-        second_last_name blank: true, nullable: true, maxSize: 255
-        phone_number maxSize: 10, blank: false, matches: /\d{10}/
+        lastName blank: false, maxSize: 255
+        secondLastName blank: true, nullable: true, maxSize: 255
+        phoneNumber maxSize: 10, blank: false, matches: /\d{10}/
         address maxSize: 255, blank: false
     }
 

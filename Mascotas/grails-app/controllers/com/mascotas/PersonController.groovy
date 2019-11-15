@@ -3,7 +3,6 @@ package com.mascotas
 class PersonController {
 
     def index() {
-        render(view:'Principal_Person')
     }
 
     def Nueva_Person(){
@@ -26,27 +25,27 @@ class PersonController {
     }
 
     def Guardar_Person(){
-        def p = new Person(name: params.Nombre, last_name: params.Apellido_Paterno, second_last_name: params.Apellido_Materno, phone_number: params.Telefono, address: params.Direccion)
+        def p = new Person(name: params.Nombre, lastName: params.Apellido_Paterno, secondLastName: params.Apellido_Materno, phoneNumber: params.Telefono, address: params.Direccion)
         p.save()
-        index()
+        redirect(controller:"person", action:"index")
     }
 
     def Actualizar_Person(){
         def p = Person.get(params.id)
         p.name = params.Nombre
-        p.last_name = params.Apellido_Paterno
-        p.second_last_name = params.Apellido_Materno
-        p.phone_number = params.Telefono
+        p.lastName = params.Apellido_Paterno
+        p.secondLastName = params.Apellido_Materno
+        p.phoneNumber = params.Telefono
         p.address = params.Direccion
         p.save(flush: true)
-        index()
+        redirect(controller:"person", action:"index")
     }
 
     def Save_Pet(){
         Date date = new Date()
         def pet = Person.get(params.id)
-        pet.addToPets(new Pet(name: params.Nombre, birthDate: date.parse("yyyy-MM-dd",params.Fecha_Nacimiento),
-                              adoptDate: date.parse("yyyy-MM-dd",  params.Fecha_Adopcion))).save(flush: true)
-        index()
+        pet.addToPets(new Pet(name: params.Nombre, birthDate: date.parse("dd/MM/yyyy",params.Fecha_Nacimiento),
+                              adoptDate: date.parse("dd/MM/yyyy",  params.Fecha_Adopcion))).save(flush: true)
+        redirect(controller:"person", action:"index")
     }
 }

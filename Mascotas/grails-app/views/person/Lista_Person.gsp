@@ -6,9 +6,9 @@
 </head>
 <body>
     <g:each in="${persons}" var="person" status="i">
-                <g:link action="Detalle_Person" id="${person.id}">${person.id}. ${person.name} ${person.last_name} ${person.second_last_name}</g:link>
+                <g:link action="Detalle_Person" id="${person.id}">${person.id}. ${person.name} ${person.lastName} ${person.secondLastName}</g:link>
                 <p>
-                    Telefono: ${person.phone_number}
+                    Telefono: ${person.phoneNumber}
                 </p>
                 <p>
                     Numero de Mascotas: ${person.petCount}

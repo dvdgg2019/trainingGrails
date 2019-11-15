@@ -5,10 +5,12 @@ import java.text.SimpleDateFormat
 class PetController {
 
     def index() {
+    }
+
+    def New_Pet(){
         def map = [person: Person.get(params.id)]
         render(view:'New_Pet', model: map)
     }
-
 
     def Update_Pet(){
         def mascota = Pet.get(params.id)

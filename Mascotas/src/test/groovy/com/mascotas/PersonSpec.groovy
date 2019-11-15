@@ -2,7 +2,6 @@ package com.mascotas
 
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
-import sun.security.x509.OtherName
 
 class PersonSpec extends Specification implements DomainUnitTest<Person> {
 
@@ -23,14 +22,14 @@ class PersonSpec extends Specification implements DomainUnitTest<Person> {
 
         when:
         domain.name = ''
-        domain.last_name = ''
-        domain.phone_number = ''
+        domain.lastName = ''
+        domain.phoneNumber = ''
         domain.address = ''
 
         then:
         !domain.validate(['name'])
         !domain.validate(['last_name'])
-        !domain.validate(['phone_number'])
+        !domain.validate(['phoneNumber'])
         !domain.validate(['address'])
 
     }
@@ -39,14 +38,14 @@ class PersonSpec extends Specification implements DomainUnitTest<Person> {
 
         when:
         domain.name = null
-        domain.last_name = null
-        domain.phone_number = null
+        domain.lastName = null
+        domain.phoneNumber = null
         domain.address = null
 
         then:
         !domain.validate(['name'])
         !domain.validate(['last_name'])
-        !domain.validate(['phone_number'])
+        !domain.validate(['phoneNumber'])
         !domain.validate(['address'])
 
     }
@@ -57,8 +56,8 @@ class PersonSpec extends Specification implements DomainUnitTest<Person> {
         String str = 'a' * 256
         String number = '1' * 11
         domain.name = str
-        domain.last_name = str
-        domain.phone_number = number
+        domain.lastName = str
+        domain.phoneNumber = number
         domain.address = str
 
         then:
@@ -66,8 +65,8 @@ class PersonSpec extends Specification implements DomainUnitTest<Person> {
         domain.errors['name'].code == 'maxSize.exceeded'
         !domain.validate(['last_name'])
         domain.errors['last_name'].code == 'maxSize.exceeded'
-        !domain.validate(['phone_number'])
-        domain.errors['phone_number'].code == 'maxSize.exceeded'
+        !domain.validate(['phoneNumber'])
+        domain.errors['phoneNumber'].code == 'maxSize.exceeded'
         !domain.validate(['address'])
         domain.errors['address'].code == 'maxSize.exceeded'
 
@@ -76,19 +75,19 @@ class PersonSpec extends Specification implements DomainUnitTest<Person> {
     void "comprobando que el numero telefonico sean solo digitos"(){
         when:
         String str = 'a' * 10
-        domain.phone_number = str
+        domain.phoneNumber = str
 
         then:
-        !domain.validate(['phone_number'])
+        !domain.validate(['phoneNumber'])
     }
 
     void "comprobando que el numero no sea menor a 10 digitos"(){
         when:
         String str = '1' * 9
-        domain.phone_number = str
+        domain.phoneNumber = str
 
         then:
-        !domain.validate(['phone_number'])
+        !domain.validate(['phoneNumber'])
     }
 
     void "Comprobando las fechas"(){
