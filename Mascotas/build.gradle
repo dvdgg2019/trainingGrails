@@ -10,6 +10,7 @@ buildscript {
     }
 }
 
+
 version "0.1"
 group "mascotas"
 
@@ -79,3 +80,4 @@ assets {
     minifyJs = true
     minifyCss = true
 }
+

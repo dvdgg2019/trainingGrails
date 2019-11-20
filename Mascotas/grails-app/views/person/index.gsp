@@ -6,17 +6,19 @@
     <meta name="layout" content="main"/>
     <meta name="layout" content="main"/>
     <title>Menu Personas</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
     <body>
     </br></br>
         <g:form>
             </br>
             <p class="text-center">
-              <button type="button" class="btn btn-info btn-lg"><g:link controller="Person" action="Nueva_Person">Registrar nueva persona</g:link></button>
+              <button type="button" class="btn btn-info btn-lg"><g:link controller="Person" action="New_Person">Registrar nueva persona</g:link></button>
             </p>
             <p class="text-center">
-              <button type="button" class="btn btn-info btn-lg"><g:link controller="Person" action="Lista_Person">Mostrar lista de personas</g:link></button>
+              <button type="button" class="btn btn-info btn-lg"><g:link controller="Person" action="List_Person">Mostrar lista de personas</g:link></button>
             </p>
         </g:form>
     </body>

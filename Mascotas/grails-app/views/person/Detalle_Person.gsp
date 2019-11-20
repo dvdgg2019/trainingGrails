@@ -36,7 +36,7 @@
                               <tr>
                                   <th scope="col" class="col-md-1 text-center">ID</th>
                                   <th scope="col" class="col-md-1 text-center">Nombre</th>
-                                  <th scope="col" class="col-md-10"></th>
+                                  <th scope="col" class="col-md-10 hidden-md"></th>
                               </tr>
                           </thead>
                           <tbody>
@@ -50,7 +50,7 @@
                       </table>
               </dd>
             </dl>
-             <button type="button" class="btn btn-default"><g:link action="Editar_Person" id="${person.id}">Editar</g:link></button>
+             <button type="button" class="btn btn-default"><g:link action="Edit_Person" id="${person.id}">Editar</g:link></button>
              <button type="button" class="btn btn-default"><g:link controller="Pet" action="New_Pet" id="${person.id}">Agregar Mascota</g:link></button>
         </g:form>
     </body>

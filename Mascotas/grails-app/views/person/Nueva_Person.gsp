@@ -6,11 +6,13 @@
     <meta name="layout" content="main"/>
     <meta name="layout" content="main"/>
     <title>Nuevo Registro</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
     <body>
         </br></br>
-        <g:form controller="Person" action="Guardar_Person">
+        <g:form controller="Person" action="Save_Person">
             <div class="form-group">
                <label for="Nombre" class="col-sm-2 control-label">Nombre:</label>
                <div class="col-sm-10">

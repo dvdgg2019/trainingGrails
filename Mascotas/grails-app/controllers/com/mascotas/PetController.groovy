@@ -1,7 +1,5 @@
 package com.mascotas
 
-import java.text.SimpleDateFormat
-
 class PetController {
 
     def index() {
@@ -13,12 +11,12 @@ class PetController {
     }
 
     def Update_Pet(){
-        def mascota = Pet.get(params.id)
+        def mascot = Pet.get(params.id)
         def bindingMap = [name: params.Nombre, birthDate: Date.parse("dd/MM/yyyy",params.Fecha_Nacimiento),
                           adoptDate: Date.parse("dd/MM/yyyy",  params.Fecha_Adopcion)]
-        mascota.properties = bindingMap
-        mascota.save(flush: true)
-        redirect(controller:"person", action:"Detalle_Person", id: mascota.person.id)
+        mascot.properties = bindingMap
+        mascot.save(flush: true)
+        redirect(controller:"person", action:"Detalle_Person", id: mascot.person.id)
 
     }
 
