@@ -3,6 +3,7 @@ package com.mascotas
 class PetController {
 
     def index() {
+        render(view:'index',model:[petList:Pet.list()])
     }
 
     def New_Pet(){

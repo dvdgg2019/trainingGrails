@@ -1,8 +1,6 @@
 package com.mascotas
 
 class Pet {
-
-
     String name
     Date birthDate
     Date adoptDate
