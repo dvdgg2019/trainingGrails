@@ -5,37 +5,42 @@ class PersonController {
     def index() {
     }
 
-    def New_Person(){
-        render(view:'Nueva_Person.gsp')
+    def create(){
+        render(view:'Nueva_Person')
     }
 
-    def List_Person(){
+    def list(){
         def persons = Person.list()
-        [persons:persons]
+        render(view:'List_Person',model:[persons:persons])
+
     }
 
-    def Detail_Person(){
+    def details(){
         def map = [person: Person.get(params.id)]
         render(view:'Detalle_Person.gsp', model: map)
     }
 
-    def Edit_Person(){
+    def edit(){
         def map = [person: Person.get(params.id)]
         render(view:'Editar_Person.gsp', model: map)
     }
 
-    def Save_Person(){
+    def save(){
         def bidingMap = [name:params.Nombre,
                          lastName:params.Apellido_Paterno,
                          secondLastName:params.Apellido_Materno,
                          phoneNumber:params.Telefono,
                          address:params.Direccion]
         def person = new Person(bidingMap)
+        if(!person.validate()){
+            render( view:'Nueva_Person',model:[person:person])
+            return
+        }
         person.save()
         redirect(controller:"person", action:"index")
     }
 
-    def Update_Person(){
+    def update(){
         def person = Person.get(params.id)
         def bindingMap = [name: params.Nombre, lastName: params.Apellido_Paterno, secondLastName: params.Apellido_Materno, phoneNumber: params.Telefono, address: params.Direccion]
         person.properties = bindingMap

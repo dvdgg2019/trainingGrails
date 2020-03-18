@@ -12,7 +12,7 @@
 </head>
     <body>
         </br></br>
-        <g:form action="Update_Person" id="${person.id}">
+        <g:form action="update" id="${person.id}">
             <div class="form-group">
                <label for="Nombre" class="col-sm-2 control-label">Nombre:</label>
                <div class="col-sm-10">

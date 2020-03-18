@@ -17,7 +17,7 @@ class PetController {
                           adoptDate: Date.parse("dd/MM/yyyy",  params.Fecha_Adopcion)]
         mascot.properties = bindingMap
         mascot.save(flush: true)
-        redirect(controller:"person", action:"Detalle_Person", id: mascot.person.id)
+        redirect(controller:"person", action:"details", id: mascot.person.id)
 
     }
 
