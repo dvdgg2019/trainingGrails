@@ -78,6 +78,9 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
+        databinding:
+            dateFormats:
+                - "yyyy-MM-dd"
 endpoints:
     jmx:
         unique-names: true
@@ -91,16 +94,15 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    #url: jdbc:mysql://localhost:3306/mascotas
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName:  com.mysql.jdbc.Driver
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: gerente
-    password: latiendademascotas
+    username: 'root'
+    password: ''
 
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
+            dbCreate: update
             url: jdbc:mysql://localhost:3306/mascotas
     test:
         dataSource:

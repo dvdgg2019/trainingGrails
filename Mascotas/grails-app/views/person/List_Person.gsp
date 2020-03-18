@@ -30,7 +30,7 @@
                     <tr>
                         <td> </td>
                         <td class="text-center">${person.id}</td>
-                        <td class="text-center"><g:link action="Detail_Person" id="${person.id}">${person.name}</g:link></td>
+                        <td class="text-center"><g:link action="details" id="${person.id}">${person.name}</g:link></td>
                         <td class="text-center">${person.lastName}</td>
                         <td class="text-center">${person.secondLastName}</td>
                         <td class="text-center">${person.phoneNumber}</td>

@@ -12,35 +12,35 @@
 </head>
     <body>
         </br></br>
-        <g:form controller="Person" action="Save_Person">
+        <g:form controller="Person" action="save">
             <div class="form-group">
                <label for="Nombre" class="col-sm-2 control-label">Nombre:</label>
                <div class="col-sm-10">
-                <g:field type="text" name="Nombre" maxlength="255" required="" value="${Nombre}"/>
+                <g:field type="text" name="Nombre" maxlength="255" required="" value="${person?.name}"/>
                </div>
             </div>
             <div class="form-group">
                <label for="Apellido_Paterno" class="col-sm-2 control-label">Apellido Paterno:</label>
                <div class="col-sm-10">
-                <g:field type="text" name="Apellido_Paterno" maxlength="255" required="" value="${Apellido_Paterno}"/>
+                <g:field type="text" name="Apellido_Paterno" maxlength="255" required="" value="${person?.lastName}"/>
                </div>
             </div>
             <div class="form-group">
                <label for="Apellido_Materno" class="col-sm-2 control-label">Apellido Materno:</label>
                <div class="col-sm-10">
-                <g:field type="text" name="Apellido_Materno" maxlength="255" value="${Apellido_Materno}"/>
+                <g:field type="text" name="Apellido_Materno" maxlength="255" value="${person?.secondLastName}"/>
                </div>
             </div>
             <div class="form-group">
                <label for="Telefono" class="col-sm-2 control-label">Telefono:</label>
                <div class="col-sm-10">
-                <g:field type="text" name="Telefono" maxlength="255" required="" value="${Telefono}"/>
+                <g:field type="text" name="Telefono" maxlength="255" required="" value="${person?.phoneNumber}"/>
                </div>
             </div>
             <div class="form-group">
                <label for="Direccion" class="col-sm-2 control-label">Direccion:</label>
                <div class="col-sm-10">
-                <g:field type="text" name="Direccion" maxlength="255" required="" value="${Direccion}"/>
+                <g:field type="text" name="Direccion" maxlength="255" required="" value="${person?.address}"/>
                </div>
             </div>
             <div class="form-group">
@@ -49,6 +49,7 @@
                    <g:submitButton name="guardar" value="Guardar"/>
                 </div>
             </div>
+            <g:renderErrors bean = "${person}"/>
         </g:form>
     </body>
 </html>
